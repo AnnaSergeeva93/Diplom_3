@@ -25,6 +25,8 @@ public class MainPage {
     private By sectionSauce = By.xpath(".//span[text()='Соусы']");
     //локатор раздела Начинки
     private By sectionTopping = By.xpath(".//span[text()='Начинки']");
+    //локатор текста выбранного раздела Булки, Соусы или Начинки
+    private By selectedSectionText = By.xpath(".//div[contains(@class, 'current')]/span");
 
     public MainPage(WebDriver driver){
         this.driver = driver;
@@ -72,8 +74,8 @@ public class MainPage {
 
     @Step("Проверка текста выбранной секции текущего меню")
     public String returnTextOfSelectedSection(String sectionName) {
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.textToBe(By.xpath(".//div[contains(@class, 'current')]/span"), sectionName));
-        return driver.findElement(By.xpath(".//div[contains(@class, 'current')]/span")).getText();
+        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.textToBe(selectedSectionText, sectionName));
+        return driver.findElement(selectedSectionText).getText();
     }
 
 }

@@ -111,7 +111,5 @@ public class ProfilePageTest {
         ValidatableResponse responseLogin = userSteps.userLogin(userLoginRequest);
         String accessToken = userSteps.getToken(responseLogin);
         userSteps.userDelete(accessToken);
-
-        driver.quit();
     }
 }

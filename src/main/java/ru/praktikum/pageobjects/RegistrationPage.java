@@ -9,9 +9,9 @@ public class RegistrationPage {
     private WebDriver driver;
 
     //локатор поля Имя
-    private By nameField = By.xpath("(//*[contains(@class, 'input pr-6 pl-6')]/input)[1]");
+    private By nameField = By.xpath("//div[label[text()='Имя']]/input");
     //локатор поля Email
-    private By emailField = By.xpath("(//*[contains(@class, 'input pr-6 pl-6')]/input)[2]");
+    private By emailField = By.xpath("//div[label[text()='Email']]/input");
     //локатор поля Пароль
     private By passwordField = By.xpath(".//input[@type='password']");
     //локатор кнопки Зарегистрироваться

@@ -74,7 +74,5 @@ public class RegistrationTest {
         ValidatableResponse responseLogin = userSteps.userLogin(userLoginRequest);
         String accessToken = userSteps.getToken(responseLogin);
         userSteps.userDelete(accessToken);
-
-        driver.quit();
     }
 }
